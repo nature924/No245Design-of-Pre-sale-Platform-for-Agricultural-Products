@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.NongchanyushouDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.NongchanyushouEntity" id="nongchanyushouMap">
+        <result property="chanpinmingcheng" column="chanpinmingcheng"/>
+        <result property="chanpinleixing" column="chanpinleixing"/>
+        <result property="chanpintupian" column="chanpintupian"/>
+        <result property="caizhairiqi" column="caizhairiqi"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="jiage" column="jiage"/>
+        <result property="guige" column="guige"/>
+        <result property="weiyueshuoming" column="weiyueshuoming"/>
+        <result property="baozhiqi" column="baozhiqi"/>
+        <result property="xiangqingmiaoshu" column="xiangqingmiaoshu"/>
+        <result property="nonghuhao" column="nonghuhao"/>
+        <result property="clicktime" column="clicktime"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.NongchanyushouVO" >
+		SELECT * FROM nongchanyushou  nongchanyushou         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.NongchanyushouVO" >
+		SELECT  nongchanyushou.* FROM nongchanyushou  nongchanyushou 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.NongchanyushouView" >
+
+		SELECT  nongchanyushou.* FROM nongchanyushou  nongchanyushou 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.NongchanyushouView" >
+		SELECT * FROM nongchanyushou  nongchanyushou <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
